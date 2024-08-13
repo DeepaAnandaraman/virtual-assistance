@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Dashboard with Tailwind CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Adjust the size of the canvas to fit your requirements */
+        .chart-container {
+            position: relative;
+            width: 400px; /* Adjusted width */
+            height: 400px; /* Adjusted height */
+        }
+        .chart-legend {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px; /* Space between chart and legend */
+        }
+        .chart-legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .legend-color-box {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Dashboard -->
+    <div class="w-full max-w-6xl mx-auto mt-10">
+        <div class="bg-white shadow-md rounded p-6 mb-4">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Dashboard</h2>
+
+            <!-- Metrics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-blue-100 p-4 rounded-lg text-center">
+                    <h3 class="text-lg font-bold text-gray-700">Total Employees</h3>
+                    <p class="text-2xl text-blue-700">100</p>
+                </div>
+                <div class="bg-green-100 p-4 rounded-lg text-center">
+                    <h3 class="text-lg font-bold text-gray-700">Men</h3>
+                    <p class="text-2xl text-green-700">60</p>
+                </div>
+                <div class="bg-pink-100 p-4 rounded-lg text-center">
+                    <h3 class="text-lg font-bold text-gray-700">Women</h3>
+                    <p class="text-2xl text-pink-700">40</p>
+                </div>
+            </div>
+
+            <!-- Charts and Legends -->
+            <div class="mb-6 flex items-center">
+                <!-- Left Pie Chart (Men vs Women) -->
+                <div class="flex items-center">
+                    <div class="chart-container">
+                        <canvas id="employeeChart1"></canvas>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #1D4ED8;"></div>
+                            <span>Men</span>
+                        </div>
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #4B5563;"></div>
+                            <span>Women</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Pie Chart (Role Distribution) -->
+                <div class="flex items-center ml-20">
+                    <div class="chart-container">
+                        <canvas id="employeeChart2"></canvas>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #FF6384;"></div>
+                            <span>Developer</span>
+                        </div>
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #36A2EB;"></div>
+                            <span>Tester</span>
+                        </div>
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #FFCE56;"></div>
+                            <span>Manager</span>
+                        </div>
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #4BC0C0;"></div>
+                            <span>Analyst</span>
+                        </div>
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #9966FF;"></div>
+                            <span>Designer</span>
+                        </div>
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #FF9F40;"></div>
+                            <span>HR</span>
+                        </div>
+                        <div class="chart-legend-item">
+                            <div class="legend-color-box" style="background-color: #FF6F61;"></div>
+                            <span>Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities -->
+            <div class="bg-white shadow-md rounded p-6 mb-6">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Recent Activities</h3>
+                <ul class="list-disc pl-5">
+                    <li class="mb-2">Learning modules uploaded</li>
+                    <li class="mb-2">Automated feedback processing enabled </li>
+                    <li class="mb-2">Michael Johnson attended the client meeting</li>
+                    <li class="mb-2">Emily Davis updated the project plan</li>
+                </ul>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="bg-white shadow-md rounded p-6 mb-6">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Performance Metrics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-700">Project Completion Rate</h4>
+                        <p class="text-2xl text-blue-700">85%</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-700">Customer Satisfaction</h4>
+                        <p class="text-2xl text-green-700">90%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Table -->
+            <div class="bg-white shadow-md rounded p-6 mb-6">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Employee Summary</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">Employee ID</th>
+                                <th class="py-2 px-4 border-b">Name</th>
+                                <th class="py-2 px-4 border-b">Department</th>
+                                <th class="py-2 px-4 border-b">Position</th>
+                                <th class="py-2 px-4 border-b">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border-b">ID1</td>
+                                <td class="py-2 px-4 border-b">John Doe</td>
+                                <td class="py-2 px-4 border-b">Marketing</td>
+                                <td class="py-2 px-4 border-b">Manager</td>
+                                <td class="py-2 px-4 border-b">Active</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">ID2</td>
+                                <td class="py-2 px-4 border-b">Jane Smith</td>
+                                <td class="py-2 px-4 border-b">Finance</td>
+                                <td class="py-2 px-4 border-b">Analyst</td>
+                                <td class="py-2 px-4 border-b">Active</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">ID3</td>
+                                <td class="py-2 px-4 border-b">Michael Johnson</td>
+                                <td class="py-2 px-4 border-b">IT</td>
+                                <td class="py-2 px-4 border-b">Developer</td>
+                                <td class="py-2 px-4 border-b">Inactive</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">ID4</td>
+                                <td class="py-2 px-4 border-b">Alice Johnson</td>
+                                <td class="py-2 px-4 border-b">IT</td>
+                                <td class="py-2 px-4 border-b">Tester</td>
+                                <td class="py-2 px-4 border-b">Active</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">ID5</td>
+                                <td class="py-2 px-4 border-b">Bob Smith</td>
+                                <td class="py-2 px-4 border-b">Marketing</td>
+                                <td class="py-2 px-4 border-b">Designer</td>
+                                <td class="py-2 px-4 border-b">Active</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">ID6</td>
+                                <td class="py-2 px-4 border-b">Robert</td>
+                                <td class="py-2 px-4 border-b">Finance</td>
+                                <td class="py-2 px-4 border-b">Support</td>
+                                <td class="py-2 px-4 border-b">Inactive</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">ID7</td>
+                                <td class="py-2 px-4 border-b">Stephen</td>
+                                <td class="py-2 px-4 border-b">IT</td>
+                                <td class="py-2 px-4 border-b">HR</td>
+                                <td class="py-2 px-4 border-b">Active</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const ctx1 = document.getElementById('employeeChart1').getContext('2d');
+        const employeeChart1 = new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: ['Men', 'Women'],
+                datasets: [{
+                    label: 'Number of Employees',
+                    data: [60, 40],
+                    backgroundColor: ['#1D4ED8', 'pink-100 p-4 rounded-lg'], // Adjusted colors
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false // Hide default legend
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (context.parsed !== null) {
+                                    label += ': ' + context.parsed + ' (' + Math.round(context.raw) + '%)';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('employeeChart2').getContext('2d');
+        const employeeChart2 = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['Developer', 'Tester', 'Manager', 'Analyst', 'Designer', 'HR', 'Support'],
+                datasets: [{
+                    label: 'Role Distribution',
+                    data: [20, 10, 10, 20, 10, 5, 25],
+                    backgroundColor: [
+                        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#FF6F61'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false // Hide default legend
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (context.parsed !== null) {
+                                    label += ': ' + context.parsed + ' (' + Math.round(context.raw) + '%)';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

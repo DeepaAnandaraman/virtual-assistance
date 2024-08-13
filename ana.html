@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pie-chart {
+            background: conic-gradient(
+                #3B82F6 0deg 70deg,
+                #60A5FA 70deg 100deg,
+                #93C5FD 100deg 360deg
+            );
+            position: relative;
+        }
+        .pie-chart .labels {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: black;
+        }
+        .pie-chart .labels p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+
+        .bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+}
+.bar {
+    width: 18%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bar-inner {
+    width: 100%;
+    background-color: #3B82F6;
+    transition: height 0.5s ease;
+}
+        .planning-tools {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 150px;
+        }
+        .tool {
+            width: 18%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .tool-inner {
+            width: 100%;
+            background-color: #60A5FA;
+        }
+        .search-input::placeholder {
+            color: black; /* Set the color of the placeholder text */
+        }
+        .profit-loss-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .profit-loss-section .text {
+            color: black; /* Color for Profit and Loss text */
+            text-align: center;
+        }
+        .profit-loss-section .text p {
+            margin: 0.5rem 0;
+            font-size: 1rem; /* Font size for Profit and Loss labels */
+        }
+    </style>
+</head>
+<body class="bg-blue-100 p-4">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="bg-blue-600 text-white p-4 rounded-lg mb-6">
+            <div class="flex justify-between items-center">
+                <input type="text" placeholder="Search..." class="w-1/3 bg-blue-500 text-white rounded-lg px-4 py-2 search-input">
+                <nav class="flex space-x-4">
+                    <a href="#" class="px-3 py-2 rounded-lg hover:bg-blue-700">Live Sales</a>
+                    <a href="#" class="px-3 py-2 rounded-lg hover:bg-blue-700">Real-Time Metrics</a>
+                    <a href="#" class="px-3 py-2 rounded-lg hover:bg-blue-700">Tracking</a>
+                    <a href="#" class="px-3 py-2 rounded-lg hover:bg-blue-700">Shares</a>
+                    
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-3 gap-6">
+            <!-- Project Management -->
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4 text-blue-600">Project Management</h2>
+                <div class="flex items-center">
+                    <div class="pie-chart w-48 h-48 rounded-full"></div>
+                    <div class="ml-6 flex flex-col justify-center">
+                        <p class="text-2xl font-bold text-blue-600">80%</p>
+                        <p class="text-blue-600">Profit: 35</p>
+                        <p class="text-blue-400">Product: 475</p>
+                        <p class="text-blue-300">Sales: 440</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics -->
+           <!-- Analytics -->
+<div class="bg-white p-4 rounded-lg shadow col-span-2">
+    <h2 class="text-xl font-bold mb-4 text-blue-600">Analytics</h2>
+    <div class="bar-chart">
+        <!-- Each Bar -->
+        <div class="bar">
+            <div class="bar-inner" style="height: 75%;"></div>
+            <span class="mt-2 text-sm">Growth</span>
+        </div>
+        <div class="bar">
+            <div class="bar-inner" style="height: 50%;"></div>
+            <span class="mt-2 text-sm">Revenue</span>
+        </div>
+        <div class="bar">
+            <div class="bar-inner" style="height: 66%;"></div>
+            <span class="mt-2 text-sm">Sales</span>
+        </div>
+        <div class="bar">
+            <div class="bar-inner" style="height: 80%;"></div>
+            <span class="mt-2 text-sm">Product</span>
+        </div>
+        <div class="bar">
+            <div class="bar-inner" style="height: 33%;"></div>
+            <span class="mt-2 text-sm">Customer</span>
+        </div>
+    </div>
+</div>
+            <!-- Planning Tools -->
+         <!-- Planning Tools -->
+<div class="bg-white p-4 rounded-lg shadow">
+    <h2 class="text-xl font-bold mb-4 text-blue-600">Planning Tools</h2>
+    <div class="planning-tools">
+        <div class="tool"><div class="tool-inner h-full"></div><span class="mt-2 text-black">Jira</span></div>
+        <div class="tool"><div class="tool-inner h-4/5"></div><span class="mt-2 text-black">Trello</span></div>
+        <div class="tool"><div class="tool-inner h-3/5"></div><span class="mt-2 text-black">Asana</span></div>
+        <div class="tool"><div class="tool-inner h-4/5"></div><span class="mt-2 text-black">Monday</span></div>
+        <div class="tool"><div class="tool-inner h-3/4"></div><span class="mt-2 text-black">Notion</span></div>
+    </div>
+</div>
+            <!-- Profit and Loss -->
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4 text-blue-600">Profit and Loss</h2>
+                <div class="profit-loss-section">
+                    <div class="text">
+                        <p><span class="font-bold">Profit:</span> 80%</p>
+                        <p><span class="font-bold">Loss:</span> 20%</p>
+                        <p>Loss due to:</p>
+                        <ul class="list-disc pl-5">
+                            <li>Operational inefficiencies</li>
+                            <li>Increased overhead costs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Project Completion -->
+             <!-- Project Completion -->
+<div class="bg-white p-4 rounded-lg shadow">
+    <h2 class="text-xl font-bold mb-4 text-blue-600">Project Completion</h2>
+    <div class="flex items-center">
+        <!-- Pie Chart -->
+        <div class="relative w-48 h-48">
+            <div class="pie-chart w-full h-full rounded-full"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                
+            </div>
+        </div>
+        <!-- Labels Next to Pie Chart -->
+        <div class="ml-6">
+            <p class="text-lg font-bold text-[#3B82F6]">Completed: 80%</p>
+            <p class="text-lg font-bold text-[#60A5FA]">Pending: 10%</p>
+            <p class="text-lg font-bold text-[#93C5FD]">Hold: 10%</p>
+        </div>
+    </div>
+</div>
+
+            
+            </div>
+        </div>
+    </div>
+</body>
+</html>

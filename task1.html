@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    width: {
+                        '1.5': '1.5rem',
+                    },
+                    height: {
+                        '1.5': '1.5rem',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-blue-50 p-6">
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-8 text-blue-900">Task</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- Pending Tasks -->
+            <div class="bg-blue-100 shadow-lg rounded-lg p-4 flex flex-col h-full">
+                <h2 class="text-2xl font-bold text-center mb-4 text-blue-800">Pending Tasks</h2>
+                <div class="flex-1 overflow-auto">
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span>Design work is still pending and needs to be completed.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-blue-600 border-2 border-blue-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Additional information is required for project progress.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-blue-600 border-2 border-blue-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Feedback from the client is awaited to move forward.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-blue-600 border-2 border-blue-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>The design review meeting is yet to be scheduled.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-blue-600 border-2 border-blue-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Approval from stakeholders is pending before execution.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-blue-600 border-2 border-blue-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Waiting for feedback from the client on recent submissions.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-blue-600 border-2 border-blue-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Documentation and final touches are still in progress.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-blue-600 border-2 border-blue-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="bg-blue-600 text-white py-2 px-6 rounded-full text-center">
+                        7 Tasks Remaining - Urgent review needed
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Tasks -->
+            <div class="bg-blue-200 shadow-lg rounded-lg p-4 flex flex-col h-full">
+                <h2 class="text-2xl font-bold text-center mb-4 text-blue-900">Completed Tasks</h2>
+                <div class="flex-1 overflow-auto">
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span>Design work completed successfully as per the requirements.</span>
+                            <input type="checkbox" checked class="form-checkbox w-1.5 h-1.5 text-blue-800 border-2 border-blue-800 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>All issues reported have been resolved effectively.</span>
+                            <input type="checkbox" checked class="form-checkbox w-1.5 h-1.5 text-blue-800 border-2 border-blue-800 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>The project was delivered on schedule without any delays.</span>
+                            <input type="checkbox" checked class="form-checkbox w-1.5 h-1.5 text-blue-800 border-2 border-blue-800 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Quality assurance checks were successfully passed.</span>
+                            <input type="checkbox" checked class="form-checkbox w-1.5 h-1.5 text-blue-800 border-2 border-blue-800 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Positive feedback received from the client on deliverables.</span>
+                            <input type="checkbox" checked class="form-checkbox w-1.5 h-1.5 text-blue-800 border-2 border-blue-800 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>The project milestones were met without any issues.</span>
+                            <input type="checkbox" checked class="form-checkbox w-1.5 h-1.5 text-blue-800 border-2 border-blue-800 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>All tasks were completed ahead of the initial timeline.</span>
+                            <input type="checkbox" checked class="form-checkbox w-1.5 h-1.5 text-blue-800 border-2 border-blue-800 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="bg-blue-500 text-white py-2 px-4 rounded-lg text-center">
+                        All tasks completed successfully. Great job!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Tasks -->
+            <div class="bg-red-100 shadow-lg rounded-lg p-4 flex flex-col h-full">
+                <h2 class="text-2xl font-bold text-center mb-4 text-red-800">Error Tasks</h2>
+                <div class="flex-1 overflow-auto">
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span>Urgent fix required for the system crash issue.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-red-600 border-2 border-red-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Immediate attention needed for data corruption.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-red-600 border-2 border-red-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Critical issue detected; needs fast resolution.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-red-600 border-2 border-red-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>System crash issue reported; requires urgent fix.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-red-600 border-2 border-red-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Unauthorized access attempt; needs immediate investigation.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-red-600 border-2 border-red-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Files missing or corrupted; requires quick resolution.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-red-600 border-2 border-red-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Urgent patch required for security vulnerability.</span>
+                            <input type="checkbox" class="form-checkbox w-1.5 h-1.5 text-red-600 border-2 border-red-600 rounded focus:ring-0 cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="bg-red-500 text-white py-2 px-4 rounded-lg text-center">
+                        Error resolution in progress. Immediate action required.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

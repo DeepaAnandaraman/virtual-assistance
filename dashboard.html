@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex flex-col md:flex-row h-screen">
+        <!-- Sidebar -->
+        <aside class="bg-gray-800 text-white w-full md:w-64 p-4 border-r border-gray-700">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold">Deepa</h1>
+                <button class="md:hidden text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="mt-6">
+                <a href="dashboard1.html" class="block py-2 px-4 hover:bg-gray-700 rounded">Dashboard</a>
+                <a href="project1.html" class="block py-2 px-4 hover:bg-gray-700 rounded">Projects</a>
+                <a href="task1.html" class="block py-2 px-4 hover:bg-gray-700 rounded">Tasks</a>
+                <a href="ana.html" class="block py-2 px-4 hover:bg-gray-700 rounded">Analytics</a>
+            </nav>
+            <div class="mt-6 p-4 bg-gray-700 rounded">
+                <h2 class="text-lg font-semibold mb-2">Recent Tasks</h2>
+                <ul class="space-y-2">
+                    <li class="block py-2 px-4 hover:bg-gray-600 rounded">Update project timeline</li>
+                    <li class="block py-2 px-4 hover:bg-gray-600 rounded">Review client feedback</li>
+                    <li class="block py-2 px-4 hover:bg-gray-600 rounded">Prepare presentation</li>
+                    <li class="block py-2 px-4 hover:bg-gray-600 rounded">Team meeting</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Home Page</h2>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Start Managing Projects
+                    </button>
+                </div>
+            </header>
+
+            <div class="max-w-6xl mx-auto py-6 sm:px-6 lg:px-8">
+                <!-- Background image and text -->
+                <div class="relative h-96 rounded-lg overflow-hidden mb-8">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="Background" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center">
+                            <h2 class="text-4xl font-bold text-white mb-4">Project Management <br>Made Easy</h2>
+                            <p class="text-xl text-white mb-8">Streamline your project workflows and stay on top of your tasks.
+
+                            </p>
+                            <button class="bg-blue-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-lg">
+                                Start Managing Projects
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard content -->
+                <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6 mb-8">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Your Dashboard</h3>
+                    <!-- Add your dashboard content here -->
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Recent Activities</h3>
+                    <ul class="divide-y divide-gray-200">
+                        <li class="py-4">
+                            <div class="flex space-x-3">
+                                <img class="h-6 w-6 rounded-full" src="https://randomuser.me/api/portraits/women/1.jpg" alt="">
+                                <div class="flex-1 space-y-1">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="text-sm font-medium">Alice Johnson</h3>
+                                        <p class="text-sm text-gray-500">1h ago</p>
+                                    </div>
+                                    <p class="text-sm text-gray-500">Automated feedback processing enabled from the Project ID: 009</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-4">
+                            <div class="flex space-x-3">
+                                <img class="h-6 w-6 rounded-full" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                                <div class="flex-1 space-y-1">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="text-sm font-medium">Bob Smith</h3>
+                                        <p class="text-sm text-gray-500">3h ago</p>
+                                    </div>
+                                    <p class="text-sm text-gray-500">Learning modules uploaded, the project ID : 010</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-4">
+                            <div class="flex space-x-3">
+                                <img class="h-6 w-6 rounded-full" src="https://randomuser.me/api/portraits/men/4.jpg" alt="">
+                                <div class="flex-1 space-y-1">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="text-sm font-medium">David</h3>
+                                        <p class="text-sm text-gray-500">4h ago</p>
+                                    </div>
+                                    <p class="text-sm text-gray-500">Data migration plan finalized, ProjectID : 004</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-4">
+                            <div class="flex space-x-3">
+                                <img class="h-6 w-6 rounded-full" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
+                                <div class="flex-1 space-y-1">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="text-sm font-medium">Robert</h3>
+                                        <p class="text-sm text-gray-500">5h ago</p>
+                                    </div>
+                                    <p class="text-sm text-gray-500">Wireframes reviewed and approved, the project ID : 002</p>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Add more activity items as needed -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- Chatbot -->
+        <div class="w-full md:w-96 bg-white border-l">
+            <div class="p-4 border-b">
+                <h3 class="text-lg font-semibold">Deepa-chatbot</h3>
+            </div>
+            <div class="h-full flex flex-col">
+                <div id="chat-messages" class="flex-1 overflow-y-auto p-4">
+                    <iframe width="350" height="650" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/da6b6e77-b0ab-44eb-a08a-8d4e360f62d4"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add your JavaScript for handling task clicks and chatbot functionality here
+    </script>
+</body>
+</html>
